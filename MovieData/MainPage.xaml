@@ -6,8 +6,65 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Beige"/>
+            <Setter Property="FontFamily" Value="Open Sans"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        
+    </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
+    
+    <Grid Background="SteelBlue">
+        <TextBlock HorizontalAlignment="Center"
+                   Text="Dare to Search"
+                   FontSize="48"
+                   FontFamily="Open Sans"
+                   Margin="0,10,0,0"
+                   Foreground="Beige"/>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,20,0,0">
+            <TextBox PlaceholderText="Enter a Movie Name"
+                     x:Name="searchBox"
+                     MinWidth="200"
+                     Margin="0,0,0,2"/>
+            <Button Content="Search" 
+                    Click="Button_Click"
+                    Margin="0,2,0,2"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Image Name="moviePoster"
+                           Stretch="Uniform"
+                           Height="200"
+                           Margin="0,2,5,0"/>
+                </StackPanel>
+                <StackPanel Margin="5,2,0,0">
+                    <TextBlock Text="Name:"/>
+                    <TextBlock Text="Director:"/>
+                    <TextBlock Text="IMDb Rating:"/>
+                    <TextBlock Text="Rated:"/>
+                    <TextBlock Text="Year:"/>
+                    <TextBlock Text="Genre:"/>
+                    <TextBlock Text="Boxoffice:"/>
+                    <HyperlinkButton Style="{ThemeResource TextBlockButtonStyle}"
+                                     Name="imageMagnifier"
+                                     Click="imageMagnifier_Click"
+                                     Foreground="White"/>
+                    <TextBlock Name="Warning"/>
+                </StackPanel>
+                <StackPanel Margin="5,2,0,0">
+                    <TextBlock Name="movieName"/>
+                    <TextBlock Name="movieDirector"/>
+                    <TextBlock Name="movieRating"/>
+                    <TextBlock Name="movieRated"/>
+                    <TextBlock Name="movieYear"/>
+                    <TextBlock Name="movieGenre"/>
+                    <TextBlock Name="movieBoxOffice"/>
+                </StackPanel>                
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
