@@ -15,7 +15,7 @@ namespace MovieData
         public async static Task<RootObject> GetIMDbData(string movieTitle)
         {
             var http = new HttpClient();
-            var response = await http.GetAsync(String.Format("http://www.omdbapi.com/?apikey=e2d74f62&t={0}", movieTitle));
+            var response = await http.GetAsync(String.Format("[Your API Key]", movieTitle));
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(RootObject));
 
